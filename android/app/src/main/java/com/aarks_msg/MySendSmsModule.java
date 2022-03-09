@@ -5,6 +5,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.uimanager.IllegalViewOperationException; 
+import java.util.ArrayList;
 
 import android.telephony.SmsManager;
 
@@ -25,9 +26,15 @@ public class MySendSmsModule extends ReactContextBaseJavaModule {
     public void sendDirectSms(String phoneNumber, String msg) {
         try {  
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(
-              phoneNumber, null, msg, null, null
-            );
+            
+            // smsManager.sendTextMessage(
+            //   phoneNumber, null, msg, null, null
+            // );
+            //the above portion sends single sms
+
+            ArrayList<String> parts = smsManager.divideMessage(msg);
+
+            smsManager.sendMultipartTextMessage(phoneNumber, null, parts, null, null);
         } catch (Exception ex) {
             System.out.println("couldn't send message.");
         } 

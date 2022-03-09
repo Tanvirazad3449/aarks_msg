@@ -175,7 +175,7 @@ class Home extends Component {
                     </View>
 
                     <FlatList
-                        data={data}
+                        data={this.state.Data_SMS}
                         horizontal={false}
                         style={{ paddingTop: 0 }}
                         showsVerticalScrollIndicator={false}

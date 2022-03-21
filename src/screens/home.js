@@ -52,7 +52,7 @@ class Home extends Component {
     }
     async fetchSMS(own_number) {
         this.setState({ loading: true })
-        const link = "http://139.99.239.233/api/message/" + own_number;
+        const link = "https://aarks.com.au/email_sms/api/message/" + own_number;
         const data = await fetch(link);
         const item = await data.json();
 
@@ -90,7 +90,7 @@ class Home extends Component {
         this.sendMessage(obj.to_number, obj.message, obj.id)
     }
     async updateStatus(sent_id){
-        const link = "http://139.99.239.233/api/update_status?sent_id=" + sent_id;
+        const link = "https://aarks.com.au/email_sms/api/update_status?sent_id=" + sent_id;
         const data = await fetch(link);
         const item = await data.json(); 
         console.log(link);

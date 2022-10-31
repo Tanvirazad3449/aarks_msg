@@ -4,12 +4,8 @@ import {
     SafeAreaView, NativeModules, PermissionsAndroid, ToastAndroid, StyleSheet, ScrollView, TouchableWithoutFeedback, TouchableOpacity, Image, ActivityIndicator
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import data from './../mock_data/data.json'
-import FeatherIcon from 'react-native-vector-icons/Feather';
 import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 const screenWidth = Math.round(Dimensions.get('window').width);
-const screenHeight = Math.round(Dimensions.get('window').height);
-import F5Icon from 'react-native-vector-icons/FontAwesome5';
 var DirectSms = NativeModules.DirectSms;
 import { Slider } from '@miblanchard/react-native-slider';
 
